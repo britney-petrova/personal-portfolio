@@ -1,0 +1,54 @@
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    background-color: #fdfbff;
+    color: #2c2c2c;
+    line-height: 1.6;
+    padding: 2rem;
+}
+
+/* Header section */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.profile-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-bottom: 1rem;
+}
+
+/* Typography */
+h1 {
+    font-size: 2rem;
+    color: #e91e63; /* pink accent */
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Background styling */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(145deg, #fdfbff, #ffe6f0);
+    z-index: -1;
+    opacity: 0.3;
+}
