@@ -1,5 +1,6 @@
 /* Reset and base styles */
 * {
+    /* include padding and border in total width and height */
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -10,19 +11,19 @@ body {
     background-color: #fdfbff;
     color: #2c2c2c;
     line-height: 1.6;
-    padding: 2rem;
+    padding: 2rem; /* increase space b/w body and border of the box */
 }
 
 /* Header section */
 header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 3rem; /* set bottom margin of header */
 }
 
 .profile-pic {
     width: 140px;
     height: 140px;
-    border-radius: 50%;
+    border-radius: 50%; /* round corners of pfp */
     object-fit: cover;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     margin-bottom: 1rem;
@@ -41,14 +42,70 @@ p {
 }
 
 /* Background styling */
-body::before {
+    body::before { /* pseudo child of body */
     content: "";
-    position: fixed;
+    position: fixed; /* fix background styling to top of browser  */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(145deg, #fdfbff, #ffe6f0);
+    background: linear-gradient(145deg, #fcfbff, #ffe6f0);
     z-index: -1;
     opacity: 0.3;
+}
+
+/* Layout with Flexbox */
+main {
+    display: flex;
+    flex-direction: column; /* arrange sections vertically */
+    gap: 3rem; /* spacing between sections */
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Project card layout */
+.project-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease; /* smooth animation on hover */
+}
+
+.project-card:hover {
+    transform: translateY(-4px); /* slight upward lift effect on hover */
+}
+
+/* Skills list styling */
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none; /* remove default bullet points */
+    padding-left: 1rem;
+}
+
+/* Contact links styling */
+.contact-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.contact-links li {
+    margin-bottom: 0.5rem;
+}
+
+.contact-links a {
+    text-decoration: none; /* remove underline from links */
+    color: #e91e63;
+    margin-left: 0.5rem;
+}
+
+/* Footer section */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    color: #999;
+    font-size: 0.9rem;
 }
