@@ -14,6 +14,26 @@ body {
     padding: 2rem; /* increase space b/w body and border of the box */
 }
 
+/* Background styling */
+body::before { /* pseudo child of body */
+    content: "";
+    position: fixed; /* fix background styling to top of browser  */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(145deg, #fcfbff, #ffe6f0);
+    z-index: -1;
+    opacity: 0.3;
+}
+
+/* Responsive container */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
 /* Header section */
 header {
     text-align: center;
@@ -32,44 +52,30 @@ header {
 /* Typography */
 h1 {
     font-size: 2rem;
-    color: #e91e63; /* pink accent */
+    color: #e91e63;
     margin-bottom: 0.5rem;
-}
-
-p {
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  p {
     font-size: 1.1rem;
     color: #555;
-}
-
-/* Background styling */
-    body::before { /* pseudo child of body */
-    content: "";
-    position: fixed; /* fix background styling to top of browser  */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(145deg, #fcfbff, #ffe6f0);
-    z-index: -1;
-    opacity: 0.3;
-}
+    margin-bottom: 1rem;
+  }
 
 /* Layout with Flexbox */
 main {
     display: flex;
     flex-direction: column; /* arrange sections vertically */
     gap: 3rem; /* spacing between sections */
-    max-width: 900px;
-    margin: 0 auto;
 }
 
-.project-container {
-    display: flex; /* flexible items should wrap */
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-/* Project card layout */
+/* Projects section */
 .project-card {
     flex: 1 1 300px; /* shorthand: grow, shrink, basis */
     background-color: #fff;
@@ -77,13 +83,32 @@ main {
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
     transition: transform 0.2s ease; /* smooth animation on hover */
-}
-
-.project-card:hover {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .project-card:hover {
     transform: translateY(-4px); /* slight upward lift effect on hover */
-}
+  }
+  
+  /* keep spacing consistent and tight b/w items */
+  .project-card > * + * {
+    margin-top: 0.75rem;
+  }
+  
+  /* GitHub link */
+  .project-card a {
+    color: #e91e63;
+    text-decoration: none;
+    font-weight: bold;
+    align-self: flex-start; /* prevent it from stretching full width */
+  }
+  
+  .project-card a:hover {
+    text-decoration: underline;
+  }  
 
-/* Skills list styling */
+/* Skills list */
 .skills-list {
     display: flex;
     flex-direction: column;
@@ -92,22 +117,30 @@ main {
     padding-left: 1rem;
 }
 
-/* Contact links styling */
 .contact-links {
     list-style: none;
     padding: 0;
     margin-top: 1rem;
-}
-
-.contact-links li {
-    margin-bottom: 0.5rem;
-}
-
-.contact-links a {
-    text-decoration: none; /* remove underline from links */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  
+  .contact-links li {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .contact-links i {
+    margin-right: 0.5rem;
+  }
+  
+  .contact-links a {
+    text-decoration: none;
     color: #e91e63;
-    margin-left: 0.5rem;
-}
+  }  
 
 /* Footer section */
 footer {
@@ -116,3 +149,35 @@ footer {
     color: #999;
     font-size: 0.9rem;
 }
+
+/* Media Queries */
+@media (max-width: 768px) { /* apply CSS styles depending on media type */
+    body {
+      padding: 1rem;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    h2 {
+      font-size: 1.3rem;
+    }
+  
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .contact-links {
+      flex-direction: column;
+    }
+  
+    .skills-list {
+      padding-left: 0;
+    }
+  
+    .project-container {
+      flex-direction: column;
+    }
+  }  
