@@ -63,8 +63,15 @@ main {
     margin: 0 auto;
 }
 
+.project-container {
+    display: flex; /* flexible items should wrap */
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
 /* Project card layout */
 .project-card {
+    flex: 1 1 300px; /* shorthand: grow, shrink, basis */
     background-color: #fff;
     padding: 1.5rem;
     border-radius: 12px;
