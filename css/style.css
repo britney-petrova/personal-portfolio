@@ -1,4 +1,4 @@
-c/* Reset and base styles */
+/* Reset and base styles */
 * {
     /* include padding and border in total width and height */
     box-sizing: border-box;
@@ -7,6 +7,8 @@ c/* Reset and base styles */
 }
 
 body {
+    margin: 0;
+    overflow-x: hidden;
     font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     background-color: #fdfbff;
     color: #2c2c2c;
@@ -22,31 +24,49 @@ body::before { /* pseudo child of body */
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(145deg, #fcfbff, #ffe6f0);
     z-index: -1;
     opacity: 0.3;
+}
+
+/* Hero section */
+.hero {
+    background-color: #ffe3ed;
+    text-align: center;
+    padding: 2rem 1rem 1rem;
+    margin: 0;
+    width: 100vw;
+    box-sizing: border-box;
+    margin-bottom: 2rem;
+  }
+
+.hero header {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /* Responsive container */
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 1rem;
-  }
+    padding: 1rem;
+    overflow-x: hidden;
+}
 
 /* Header section */
 header {
-    text-align: center;
-    margin-bottom: 3rem; /* set bottom margin of header */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
 }
 
 .profile-pic {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%; /* round corners of pfp */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Typography */
@@ -54,19 +74,19 @@ h1 {
     font-size: 2rem;
     color: #e91e63;
     margin-bottom: 0.5rem;
-  }
+}
   
-  h2 {
+h2 {
     font-size: 1.5rem;
     color: #333;
     margin-bottom: 1rem;
-  }
+}
   
-  p {
+p {
     font-size: 1.1rem;
     color: #555;
-    margin-bottom: 1rem;
-  }
+    margin-bottom: 0.75rem;
+}
 
 /* Layout with Flexbox */
 main {
@@ -81,33 +101,33 @@ main {
     background-color: #fff;
     padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease; /* smooth animation on hover */
     display: flex;
     flex-direction: column;
-  }
+}
   
-  .project-card:hover {
+.project-card:hover {
     transform: translateY(-4px); /* slight upward lift effect on hover */
-  }
+}
   
-  /* keep spacing consistent and tight b/w items */
-  .project-card > * + * {
+/* keep spacing consistent and tight b/w items */
+.project-card > * + * {
     margin-top: 0.75rem;
-  }
+}
   
-  /* GitHub link */
-  .project-card a {
+/* GitHub link */
+.project-card a {
     color: #e91e63;
     text-decoration: none;
     font-weight: bold;
     align-self: flex-start; /* prevent it from stretching full width */
-  }
+}
   
-  .project-card a:hover {
+.project-card a:hover {
     text-decoration: underline;
-  }  
-
+}  
+  
 /* Skills list */
 .skills-list {
     display: flex;
@@ -124,29 +144,32 @@ main {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-  }
+}
   
-  .contact-links li {
+.contact-links li {
     font-size: 1rem;
     display: flex;
     align-items: center;
-  }
+}
   
-  .contact-links i {
+.contact-links i {
     margin-right: 0.5rem;
-  }
+}
   
-  .contact-links a {
+.contact-links a {
     text-decoration: none;
     color: #e91e63;
-  }  
+}  
 
 /* Footer section */
 footer {
+    overflow-x: hidden;
+    background-color: #ffe3ed;
     text-align: center;
+    padding: 1rem 1rem 1rem;
     margin-top: 3rem;
-    color: #999;
-    font-size: 0.9rem;
+    width: 100vw;
+    box-sizing: border-box;
 }
 
 /* Media Queries */
@@ -179,4 +202,4 @@ footer {
     .project-container {
       flex-direction: column;
     }
-  }  
+}  
