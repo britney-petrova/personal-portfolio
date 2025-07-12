@@ -134,6 +134,22 @@ main {
     padding-left: 1rem;
 }
 
+.tech-icons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  
+  .tech-icons i {
+    font-size: 30px;
+    transition: transform 0.3s ease;
+  }
+  
+  .tech-icons i:hover {
+    transform: scale(1.2);
+  }
+  
 .contact-links {
     list-style: none;
     padding: 0;
