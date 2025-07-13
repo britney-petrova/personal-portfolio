@@ -153,6 +153,10 @@ main {
 .midnight-blue {
     color: #191970; /* add colour to text */
 }
+
+.smaller-text {
+    font-size: 1rem; /* change font size */
+}
   
 /* Contacts section */
 .contact-links {
