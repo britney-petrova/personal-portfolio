@@ -149,7 +149,12 @@ main {
   .tech-icons i:hover {
     transform: scale(1.2);
   }
+
+.midnight-blue {
+    color: #191970; /* add colour to text */
+}
   
+/* Contacts section */
 .contact-links {
     list-style: none;
     padding: 0;
