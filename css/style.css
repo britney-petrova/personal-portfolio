@@ -139,17 +139,49 @@ main {
     gap: 20px;
     flex-wrap: wrap;
     margin-top: 10px;
-  }
+}
   
-  .tech-icons i {
+.tech-icons i {
     font-size: 30px;
-    transition: transform 0.3s ease;
-  }
+    transition: transform 0.3s ease-in-out;
+    display: inline-block; /* ensure scaling works properly */
+}
   
-  .tech-icons i:hover {
+/* apply scale effect when tooltip wrapper is hovered */
+.tooltip:hover i {
     transform: scale(1.2);
-  }
-
+}
+  
+.tooltip {
+    position: relative;
+    display: inline-block;
+    margin: 0 8px;
+}
+  
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: #e91e63;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 3px 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.65rem;
+    white-space: nowrap;
+}
+  
+/* show tooltip on hover */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+  
 .midnight-blue {
     color: #191970; /* add colour to text */
 }
