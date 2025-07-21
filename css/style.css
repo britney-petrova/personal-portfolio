@@ -1,6 +1,6 @@
-/* Reset and base styles */
+/* reset and base styles */
 * {
-    /* include padding and border in total width and height */
+    /* include padding and border in total element size */
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -15,10 +15,11 @@ body {
     line-height: 1.6;
 }
 
-/* Background styling */
-body::before { /* pseudo child of body */
+/* background overlay */
+body::before {
+    /* fixed semi-transparent overlay for visual styling */
     content: "";
-    position: fixed; /* fix background styling to top of browser  */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -27,7 +28,7 @@ body::before { /* pseudo child of body */
     opacity: 0.3;
 }
 
-/* Hero section */
+/* hero section */
 .hero {
     background-color: #ffe3ed;
     text-align: center;
@@ -41,7 +42,7 @@ body::before { /* pseudo child of body */
     margin: 0 auto;
 }
 
-/* Responsive container */
+/* responsive container */
 .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -49,7 +50,7 @@ body::before { /* pseudo child of body */
     overflow-x: hidden;
 }
 
-/* Header section */
+/* header layout */
 header {
     display: flex;
     flex-direction: column;
@@ -66,7 +67,7 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Typography */
+/* typography */
 h1 {
     font-size: 2rem;
     color: #e91e63;
@@ -85,14 +86,14 @@ p {
     margin-bottom: 0.75rem;
 }
 
-/* Layout with Flexbox */
+/* main content layout */
 main {
     display: flex;
-    flex-direction: column; /* arrange sections vertically */
-    gap: 3rem; /* spacing between sections */
+    flex-direction: column;
+    gap: 3rem; /* vertical spacing b/w sections */
 }
 
-/* Projects section */
+/* projects section */
 .project-card {
     flex: 1 1 300px; /* shorthand: grow, shrink, basis */
     background-color: #fff;
@@ -105,27 +106,28 @@ main {
 }
   
 .project-card:hover {
-    transform: translateY(-4px); /* slight upward lift effect on hover */
+    /* subtle lift effect on hover */
+    transform: translateY(-4px);
 }
   
-/* keep spacing consistent and tight b/w items */
 .project-card > * + * {
+    /* uniform spacing b/w children */
     margin-top: 0.75rem;
 }
   
-/* GitHub link */
+/* github link styling */
 .project-card a {
     color: #e91e63;
     text-decoration: none;
     font-weight: bold;
-    align-self: flex-start; /* prevent it from stretching full width */
+    align-self: flex-start;
 }
   
 .project-card a:hover {
     text-decoration: underline;
 }  
   
-/* Skills list */
+/* skills section */
 .skills-list {
     display: flex;
     flex-direction: column;
@@ -144,20 +146,22 @@ main {
 .tech-icons i {
     font-size: 30px;
     transition: transform 0.3s ease-in-out;
-    display: inline-block; /* ensure scaling works properly */
+    display: inline-block; /* scaling */
 }
   
-/* apply scale effect when tooltip wrapper is hovered */
+/* scale effect on icon hover via tooltip */
 .tooltip:hover i {
     transform: scale(1.2);
 }
-  
+
+/* tooltip wrapper */
 .tooltip {
     position: relative;
     display: inline-block;
     margin: 0 8px;
 }
-  
+
+/* tooltip text styling */
 .tooltip .tooltiptext {
     visibility: hidden;
     background-color: #e91e63;
@@ -181,16 +185,19 @@ main {
     visibility: visible;
     opacity: 1;
 }
-  
+
+/* utility classes */
 .midnight-blue {
-    color: #191970; /* add colour to text */
+    /* deep blue text utility */
+    color: #191970;
 }
 
 .smaller-text {
-    font-size: 1rem; /* change font size */
+    /* slightly reduced text size */
+    font-size: 1rem;
 }
   
-/* Contacts section */
+/* contact section */
 .contact-links {
     list-style: none;
     padding: 0;
@@ -215,18 +222,19 @@ main {
     color: #e91e63;
 }  
 
-/* Footer section */
+/* footer */
 footer {
     overflow-x: hidden;
     width: 100%;
     background-color: #ffe3ed;
     text-align: center;
     padding: 1rem 0;
-    margin: 0;  /* remove default margin */
+    margin: 0; /* remove default margin */
 }
 
-/* Media Queries */
-@media (max-width: 768px) { /* apply CSS styles depending on media type */
+/* media queries */
+@media (max-width: 768px) {
+    /* apply CSS styles depending on media type */
     body {
       padding: 1rem;
     }
