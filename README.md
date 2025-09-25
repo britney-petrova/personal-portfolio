@@ -15,7 +15,6 @@ This website was built to showcase my projects, skills, and interests as an aspi
 ## 🛠️ Tech Stack
 
 - HTML5, CSS3
-- JavaScript
 - Font Awesome & Devicon for icons
 
 ## 🚀 Future Plans
