@@ -104,6 +104,13 @@ main {
     display: flex;
     flex-direction: column;
 }
+
+/* project container layout */
+.project-container {
+    display: flex;
+    flex-direction: column; /* stack cards vertically */
+    gap: 2rem; /* spacing between cards */
+}
   
 .project-card:hover {
     /* subtle lift effect on hover */
@@ -114,14 +121,16 @@ main {
     /* uniform spacing b/w children */
     margin-top: 0.75rem;
 }
-  
+
 /* github link styling */
 .project-card a {
     color: #e91e63;
     text-decoration: none;
     font-weight: bold;
     align-self: flex-start;
+    margin-top: auto; /* pushes link to the bottom */
 }
+
   
 .project-card a:hover {
     text-decoration: underline;
