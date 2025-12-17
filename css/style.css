@@ -150,6 +150,7 @@ main {
     gap: 20px;
     flex-wrap: wrap;
     margin-top: 10px;
+    margin-bottom: 8px;
 }
   
 .tech-icons i {
@@ -167,7 +168,7 @@ main {
 .tooltip {
     position: relative;
     display: inline-block;
-    margin: 0 8px;
+    margin: 8px 8px;
 }
 
 /* tooltip text styling */
@@ -176,7 +177,7 @@ main {
     background-color: #e91e63;
     color: #fff;
     text-align: center;
-    border-radius: 6px;
+    border-radius: 5px;
     padding: 3px 6px;
     position: absolute;
     z-index: 1;
